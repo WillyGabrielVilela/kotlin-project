@@ -13,7 +13,10 @@ Link da API
 Link do Figma
 
 # doc de requisitos
-Requisito 1:
+Requisito 1: 
+<br/>
 Requisito 2:
+<br/>
 Requisito 3:
+<br/>
 Requisito 4:
