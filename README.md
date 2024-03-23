@@ -10,7 +10,7 @@
 Link da API
 
 # Figma
-[Link do Figma](https://www.figma.com/file/IaawACNkEZnPvBdV9jc5TF/Projeto-Integrador---Librarian's?type=design&node-id=0-1&mode=design&t=ykFQVfpPSJQzTWAk-0))
+[Link do Figma](https://www.figma.com/file/IaawACNkEZnPvBdV9jc5TF/Projeto-Integrador---Librarian's?type=design&node-id=0-1&mode=design&t=ykFQVfpPSJQzTWAk-0)
 
 
 # doc de requisitos
