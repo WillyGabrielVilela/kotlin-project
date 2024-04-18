@@ -15,10 +15,12 @@
 
 
 # doc de requisitos
-Requisito 1: 
+Requisito 1: Cadastrar usuários
 <br/>
-Requisito 2:
+Requisito 2: Autenticação pelo Google
 <br/>
-Requisito 3:
+Requisito 3: Cadastro de livros
 <br/>
-Requisito 4:
+Requisito 4: Aluguel de livros
+<br/>
+Requisito 5: Pesquisar por livros
