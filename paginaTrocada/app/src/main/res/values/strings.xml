@@ -7,7 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Início</string>
-    <string name="menu_gallery">Galeria</string>
+    <string name="menu_home">Página Principal</string>
+    <string name="menu_gallery">Cadastrar Livros</string>
     <string name="menu_slideshow">Perfil</string>
 </resources>
