@@ -13,6 +13,7 @@ export default {
       GRAY_800: '#202024',
       GRAY_700: '#29292E',
       GRAY_600: '#323238',
+      DEGRADE: 'linear-gradient(0deg, #F0D7FF 0%, #F7C5FF 14%, #FFF1BF 100%)'
   
     },
     FONT_FAMILY: {
