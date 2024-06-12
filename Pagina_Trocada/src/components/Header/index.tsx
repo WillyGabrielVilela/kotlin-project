@@ -5,6 +5,7 @@ import { useUser, useApp } from '@realm/react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import logoutImg from '../../assets/logout.png'
+import { useNavigation } from '@react-navigation/native';
 
 export function Header() {
   const user = useUser()
@@ -18,11 +19,23 @@ export function Header() {
     app.currentUser?.logOut()
   }
 
+
+  // Navegação para Perfil
+
+  const { navigate } = useNavigation();
+
+  function handleRegisterMoviment() {
+    navigate('profile')
+  }
+
   return (
     <Container style={{ paddingTop }}>
+      <TouchableOpacity onPress={handleRegisterMoviment}>
       <Picture 
         source={{uri: user?.profile.pictureUrl }}
+        
       />
+      </TouchableOpacity>
       <Greeting>
         <Message>
           Boas-vindas ao Página Trocada
