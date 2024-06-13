@@ -1,79 +1,45 @@
-import { Realm } from '@realm/react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export class Book extends Realm.Object<Book> {
-  static schema: Realm.ObjectSchema = {
-    name: 'Book',
-    primaryKey: '_id',
-
-    properties: {
-      _id: 'uuid',
-      title: 'string',
-      photo: 'string',
-      description: 'string',
-      user: 'User'
-    }
-  }
-
-  // Método para gerar um novo livro
-  static generate() {
+export class Book {
+  static async generate(title: string, photo: string, description: string, user: string) {
     return {
-      _id: new Realm.BSON.UUID(),
-      title: '',
-      photo: '',
-      description: '',
-      user: null,
+      title,
+      photo,
+      description,
+      user,
     };
   }
 }
 
-export class RentedBook extends Realm.Object<RentedBook> {
-  static schema: Realm.ObjectSchema = {
-    name: 'RentedBook',
-    primaryKey: '_id',
-
-    properties: {
-      _id: 'uuid',
-      book: 'Book',
-      user: 'User',
-      phoneNumber: 'string'
-    }
-  }
-
-  // Método para registrar um livro alugado
-  static generate() {
+export class RentedBook {
+  static async generate(book: string, user: string, phoneNumber: string) {
     return {
-      _id: new Realm.BSON.UUID(),
-      book: null,
-      user: null,
-      phoneNumber: '',
+      book,
+      user,
+      phoneNumber,
     };
   }
 }
 
-export class User extends Realm.Object<User> {
-  static schema: Realm.ObjectSchema = {
-    name: 'User',
-    primaryKey: '_id',
-
-    properties: {
-      _id: 'uuid',
-      name: 'string',
-      email: 'string',
-      phoneNumber: 'string',
-      registeredBooks: { type: 'list', objectType: 'Book' },
-      rentedBooks: { type: 'list', objectType: 'RentedBook' }
-    }
-  }
-
-  // Método para criar um novo usuário
-  static generate() {
+export class User {
+  static async generate(name: string, email: string, phoneNumber: string) {
     return {
-      _id: new Realm.BSON.UUID(),
-      name: '',
-      email: '',
-      phoneNumber: '',
+      name,
+      email,
+      phoneNumber,
       registeredBooks: [],
       rentedBooks: [],
     };
+  }
+
+  static async save(user: User) {
+    try {
+      const usersData = await AsyncStorage.getItem('users');
+      const users = usersData ? JSON.parse(usersData) : [];
+      users.push(user);
+      await AsyncStorage.setItem('users', JSON.stringify(users));
+    } catch (error) {
+      console.error('Error saving user data:', error);
+    }
   }
 }
