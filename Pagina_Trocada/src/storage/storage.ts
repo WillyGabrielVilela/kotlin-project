@@ -1,9 +1,7 @@
-// storage.ts
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Função para obter o próximo ID sequencial
-export const getNextId = async (): Promise<string> => {
+const getNextId = async (): Promise<string> => {
   try {
     const id = await AsyncStorage.getItem('nextId');
     if (id === null) {
@@ -38,6 +36,7 @@ export const getData = async (key: string) => {
   }
 };
 
+// Função para remover os dados do AsyncStorage
 export const removeData = async (key: string) => {
   try {
     await AsyncStorage.removeItem(key);
@@ -45,3 +44,15 @@ export const removeData = async (key: string) => {
     console.error('Error removing data:', error);
   }
 };
+
+// Função para limpar todo o AsyncStorage
+export const clearStorage = async () => {
+  try {
+    await AsyncStorage.clear();
+    console.log('AsyncStorage has been cleared.');
+  } catch (error) {
+    console.error('Error clearing AsyncStorage:', error);
+  }
+};
+
+export { AsyncStorage, getNextId };
