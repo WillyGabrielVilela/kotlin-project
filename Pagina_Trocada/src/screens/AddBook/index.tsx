@@ -68,7 +68,7 @@ export const AddBook = () => {
           onChangeText={setTitle}
         />
         <Input
-          placeholder="Número de Telefone"
+          placeholder="Npumero de Telefone"
           value={phoneNumber}
           onChangeText={setPhoneNumber}
         />
@@ -76,6 +76,6 @@ export const AddBook = () => {
           <ButtonText>Cadastrar Livro</ButtonText>
         </StyledButton>
       </Container>
-    </>
-  );
+    </>
+  );
 };
