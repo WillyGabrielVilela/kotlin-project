@@ -4,6 +4,7 @@ export declare global {
         home: undefined;
         addbook: undefined;
         profile: undefined;
+        book: { bookId: string };
       }
     }
   }
