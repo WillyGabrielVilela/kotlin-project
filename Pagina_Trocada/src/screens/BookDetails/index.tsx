@@ -56,7 +56,7 @@ export function BookDetails() {
   const handleRentBook = () => {
     if (book && book.phoneNumber) {
       Clipboard.setString(book.phoneNumber);
-      Alert.alert('Número Copiado', Telefone ${book.phoneNumber} foi copiado para sua área de transferência.);
+      Alert.alert('Número Copiado', `Telefone ${book.phoneNumber} foi copiado para sua área de transferência.`);
       setIsRented(true);
     }
   };
