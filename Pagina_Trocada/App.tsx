@@ -19,22 +19,21 @@ export default function App() {
       <Loading />
     )
   }
-  return (
-    <AppProvider id={REALM_APP_ID}>
-      <ThemeProvider theme={theme}>
-        <SafeAreaProvider>
-          <StatusBar
-            barStyle="dark-content"
-            backgroundColor="transparent"
-            translucent
-          />
+   return (
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <StatusBar
+          barStyle="dark-content"
+          backgroundColor="transparent"
+          translucent
+        />
+        <AppProvider id={REALM_APP_ID}>
           <UserProvider fallback={SignIn}>
             <Routes />
           </UserProvider>
-
-        </SafeAreaProvider>
-      </ThemeProvider>
-    </AppProvider>
+        </AppProvider>
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 }
 
